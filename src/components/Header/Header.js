@@ -1,11 +1,6 @@
 import React, { useState, Fragment } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import {
-  MenuIcon,
-  SearchIcon,
-  ShoppingBagIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+import { Dialog, Tab, Transition } from "@headlessui/react";
+import { XIcon } from "@heroicons/react/outline";
 import Nav from "./Nav/Nav";
 
 const navigation = {
