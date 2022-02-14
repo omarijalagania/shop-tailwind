@@ -145,7 +145,7 @@ function Nav() {
   return (
     <nav
       aria-label="Top"
-      className="relative z-20 bg-white bg-opacity-90 backdrop-filter backdrop-blur-xl"
+      className="z-20 bg-white bg-opacity-90 backdrop-filter backdrop-blur-xl fixed top-0 w-full"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center">

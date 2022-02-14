@@ -320,7 +320,7 @@ function Header() {
 
       <header className="relative overflow-hidden">
         {/* Top navigation */}
-        <Nav />
+        {/* <Nav /> */}
 
         {/* Hero section */}
         <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
