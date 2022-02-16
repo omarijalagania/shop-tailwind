@@ -3,19 +3,19 @@ import React from "react";
 function CategorySection() {
   return (
     <section aria-labelledby="category-heading" className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <h2
             id="category-heading"
             className="text-2xl font-extrabold tracking-tight text-gray-900"
           >
-            Shop by Category
+            კატეგორიები
           </h2>
           <a
             href="#"
             className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
           >
-            Browse all categories<span aria-hidden="true"> &rarr;</span>
+            ყველა კატეგორიის ნახვა<span aria-hidden="true"> &rarr;</span>
           </a>
         </div>
 
@@ -35,11 +35,11 @@ function CategorySection() {
                 <h3 className="font-semibold text-white">
                   <a href="#">
                     <span className="absolute inset-0" />
-                    New Arrivals
+                    სიახლეები
                   </a>
                 </h3>
                 <p aria-hidden="true" className="mt-1 text-sm text-white">
-                  Shop now
+                  ნახვა
                 </p>
               </div>
             </div>
@@ -59,11 +59,11 @@ function CategorySection() {
                 <h3 className="font-semibold text-white">
                   <a href="#">
                     <span className="absolute inset-0" />
-                    Accessories
+                    აქსესუარები
                   </a>
                 </h3>
                 <p aria-hidden="true" className="mt-1 text-sm text-white">
-                  Shop now
+                  ნახვა
                 </p>
               </div>
             </div>
@@ -83,11 +83,11 @@ function CategorySection() {
                 <h3 className="font-semibold text-white">
                   <a href="#">
                     <span className="absolute inset-0" />
-                    Workspace
+                    სამუშსაო სივრცე
                   </a>
                 </h3>
                 <p aria-hidden="true" className="mt-1 text-sm text-white">
-                  Shop now
+                  ნახვა
                 </p>
               </div>
             </div>

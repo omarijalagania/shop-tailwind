@@ -165,7 +165,7 @@ function Header() {
         {/* Hero section */}
 
         {/* Decorative image grid */}
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-16">
           <Carousel
             autoPlay={true}
             showThumbs={false}

@@ -12,10 +12,10 @@ const navigation = {
   categories: [
     {
       id: "women",
-      name: "ქალი",
+      name: "ყველა პროდუქტი",
       featured: [
         {
-          name: "New Arrivals",
+          name: "სიახლეები",
           href: "#",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
@@ -23,7 +23,7 @@ const navigation = {
             "Models sitting back to back, wearing Basic Tee in black and bone.",
         },
         {
-          name: "Basic Tees",
+          name: "დღის არჩევანი",
           href: "#",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
@@ -74,7 +74,7 @@ const navigation = {
     },
     {
       id: "men",
-      name: "მამაკაცი",
+      name: "კატეგორიები",
       featured: [
         {
           name: "New Arrivals",
@@ -236,7 +236,7 @@ function Nav() {
                               {item.name}
                             </a>
                             <p aria-hidden="true" className="mt-1">
-                              Shop now
+                              ნახვა
                             </p>
                           </div>
                         ))}
