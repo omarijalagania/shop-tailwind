@@ -2,7 +2,9 @@ import React, { useState, Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import Nav from "./Nav/Nav";
-import SimpleImageSlider from "react-simple-image-slider";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 const images = [
   {
@@ -156,23 +158,34 @@ function Header() {
     <>
       {/* Mobile menu */}
 
-      <header className="flex justify-center">
+      <header className="overflow-hidden">
         {/* Top navigation */}
         {/* <Nav /> */}
 
         {/* Hero section */}
 
         {/* Decorative image grid */}
-
-        <SimpleImageSlider
-          width={1200}
-          height={504}
-          images={images}
-          showBullets={true}
-          autoPlay={true}
-          slideDuration={1.5}
-        />
-
+        <div className="flex justify-center mt-30">
+          <Carousel
+            autoPlay={true}
+            showThumbs={false}
+            infiniteLoop={true}
+            dynamicHeight={true}
+            // onChange={onChange}
+            // onClickItem={onClickItem}
+            // onClickThumb={onClickThumb}
+          >
+            {images.map((image, index) => (
+              <div key={index}>
+                <img
+                  style={{ height: "604px" }}
+                  className="object-cover aspect-square"
+                  src={image.url}
+                />
+              </div>
+            ))}
+          </Carousel>
+        </div>
         {/* Slider */}
       </header>
     </>
