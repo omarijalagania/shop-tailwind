@@ -2,7 +2,6 @@ import React, { useState, Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import Nav from "./Nav/Nav";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -154,6 +153,7 @@ function Header() {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }
+
   return (
     <>
       {/* Mobile menu */}
