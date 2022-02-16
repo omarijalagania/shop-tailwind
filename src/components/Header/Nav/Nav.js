@@ -12,7 +12,7 @@ const navigation = {
   categories: [
     {
       id: "women",
-      name: "Women",
+      name: "ქალი",
       featured: [
         {
           name: "New Arrivals",
@@ -74,7 +74,7 @@ const navigation = {
     },
     {
       id: "men",
-      name: "Men",
+      name: "მამაკაცი",
       featured: [
         {
           name: "New Arrivals",
@@ -291,7 +291,7 @@ function Nav() {
                     href="#"
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
-                    Sign in
+                    შესვლა
                   </a>
                 </div>
                 <div className="flow-root">
@@ -299,12 +299,12 @@ function Nav() {
                     href="#"
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
-                    Create account
+                    რეგისტრაცია
                   </a>
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 py-6 px-4">
+              {/* <div className="border-t border-gray-200 py-6 px-4">
                 <a href="#" className="-m-2 p-2 flex items-center">
                   <img
                     src="https://tailwindui.com/img/flags/flag-canada.svg"
@@ -316,7 +316,7 @@ function Nav() {
                   </span>
                   <span className="sr-only">, change currency</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </Transition.Child>
         </Dialog>
@@ -340,11 +340,7 @@ function Nav() {
             <div className="ml-4 flex lg:ml-0">
               <a href="#">
                 <span className="sr-only">Workflow</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
+                <img className="h-8 w-auto" src="/images/logo.png" alt="" />
               </a>
             </div>
 
@@ -469,7 +465,7 @@ function Nav() {
                   </Popover>
                 ))}
 
-                {navigation.pages.map((page) => (
+                {/* {navigation.pages.map((page) => (
                   <a
                     key={page.name}
                     href={page.href}
@@ -477,7 +473,7 @@ function Nav() {
                   >
                     {page.name}
                   </a>
-                ))}
+                ))} */}
               </div>
             </Popover.Group>
 
@@ -487,14 +483,14 @@ function Nav() {
                   href="#"
                   className="text-sm font-medium text-gray-700 hover:text-gray-800"
                 >
-                  Sign in
+                  შესვლა
                 </a>
                 <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                 <a
                   href="#"
                   className="text-sm font-medium text-gray-700 hover:text-gray-800"
                 >
-                  Create account
+                  რეგისტრაცია
                 </a>
               </div>
 
@@ -504,11 +500,11 @@ function Nav() {
                   className="text-gray-700 hover:text-gray-800 flex items-center"
                 >
                   <img
-                    src="https://tailwindui.com/img/flags/flag-canada.svg"
+                    src="/images/geo.png"
                     alt=""
                     className="w-5 h-auto block flex-shrink-0"
                   />
-                  <span className="ml-3 block text-sm font-medium">CAD</span>
+                  <span className="ml-3 block text-sm font-medium">GEO</span>
                   <span className="sr-only">, change currency</span>
                 </a>
               </div>

@@ -156,28 +156,24 @@ function Header() {
     <>
       {/* Mobile menu */}
 
-      <header className="relative h-screen overflow-hidden">
+      <header className="flex justify-center">
         {/* Top navigation */}
         {/* <Nav /> */}
 
         {/* Hero section */}
-        <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-          <div className="mt-10">
-            {/* Decorative image grid */}
-            <div className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
-              <SimpleImageSlider
-                width={1920}
-                height={1080}
-                images={images}
-                showBullets={true}
-                autoPlay={true}
-                slideDuration={1.5}
-              />
 
-              {/* Slider */}
-            </div>
-          </div>
-        </div>
+        {/* Decorative image grid */}
+
+        <SimpleImageSlider
+          width={1200}
+          height={504}
+          images={images}
+          showBullets={true}
+          autoPlay={true}
+          slideDuration={1.5}
+        />
+
+        {/* Slider */}
       </header>
     </>
   );
