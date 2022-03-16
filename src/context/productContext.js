@@ -6,6 +6,7 @@ const initialState = {
   products: [],
   email: '',
   password: '',
+  product: [],
 }
 
 const Productreducer = (state, action) => {
@@ -26,6 +27,13 @@ const Productreducer = (state, action) => {
         password: action.payload,
       }
     }
+    case 'FILTER_PRODUCT': {
+      return {
+        ...state,
+        product: action.payload,
+      }
+    }
+
     default:
       return state
   }
