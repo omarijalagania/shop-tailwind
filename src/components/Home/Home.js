@@ -22,6 +22,12 @@ export default function Home() {
     fetchProducts()
   }, [dispatch])
 
+  const filterProducts = () => {
+    dispatch({
+      type: 'FILTER_PRODUCT',
+      payload: state.products.filter((product) => product.price > 100),
+    })
+  }
   return (
     <div className='bg-white'>
       {/* Header */}
@@ -44,9 +50,10 @@ export default function Home() {
         {/* CTA section */}
         <CTASection />
         {/* CTA section End */}
-        <Register />
+        {/* <Register /> */}
       </main>
       {/* Footer */}
+
       <Footer />
       {/* Footer End*/}
     </div>
