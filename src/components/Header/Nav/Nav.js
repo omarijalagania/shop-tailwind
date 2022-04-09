@@ -506,7 +506,7 @@ function Nav() {
                 onClick={openLangMenu}
                 className='hidden lg:ml-8 lg:flex'
               >
-                {() => (
+                {(isVisible) => (
                   <>
                     <Popover.Button
                       onClick={() => setIsVisible(!isVisible)}
