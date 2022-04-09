@@ -501,20 +501,28 @@ function Nav() {
                 </a>
               </div>
 
-              <div onClick={openLangMenu} className='hidden lg:ml-8 lg:flex'>
-                <a
-                  href='#'
-                  className='text-gray-700 hover:text-gray-800 flex items-center'
-                >
-                  <img
-                    src={`/images/${activeLang}.png`}
-                    alt=''
-                    className='w-5 h-auto block flex-shrink-0'
-                  />
-                  <span className='sr-only'>, change currency</span>
-                </a>
-                {isVisible && <LangList setActiveLang={setActiveLang} />}
-              </div>
+              <Popover
+                as='div'
+                onClick={openLangMenu}
+                className='hidden lg:ml-8 lg:flex'
+              >
+                {() => (
+                  <>
+                    <Popover.Button
+                      onClick={() => setIsVisible(!isVisible)}
+                      className='text-gray-700 hover:text-gray-800 flex items-center'
+                    >
+                      <img
+                        src={`/images/${activeLang}.png`}
+                        alt=''
+                        className='w-7 h-auto block flex-shrink-0'
+                      />
+                      <span className='sr-only'>, change currency</span>
+                    </Popover.Button>
+                    {isVisible && <LangList setActiveLang={setActiveLang} />}
+                  </>
+                )}
+              </Popover>
 
               {/* Search */}
               <div className='flex lg:ml-6'>
