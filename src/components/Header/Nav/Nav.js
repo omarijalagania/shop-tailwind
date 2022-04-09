@@ -490,7 +490,7 @@ function Nav() {
                   href='#'
                   className='text-sm font-medium text-gray-700 hover:text-gray-800'
                 >
-                  შესვლა
+                  {t('login')}
                 </a>
                 <span className='h-6 w-px bg-gray-200' aria-hidden='true' />
                 <a
