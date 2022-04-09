@@ -8,15 +8,30 @@ import Header from '../Header/Header'
 import { ProductContext } from '../../context/productContext'
 import Register from '../Register/Register'
 
+//import custom hook
+import { useAxios } from '../hooks/useAxios'
+
 export default function Home() {
   //get products state from Context
   const [state, dispatch] = useContext(ProductContext)
 
+  //declare custom hook
+  const Axios = useAxios()
+
   //fetch products from API and save to state
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const res = await fetch('https://fakestoreapi.com/products')
+  //     const data = await res.json()
+  //     dispatch({ type: 'FETCH_PRODUCTS', payload: data })
+  //   }
+  //   fetchProducts()
+  // }, [dispatch])
+
+  //use custom hook
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch('https://fakestoreapi.com/products')
-      const data = await res.json()
+      const data = await Axios.get('https://fakestoreapi.com/products')
       dispatch({ type: 'FETCH_PRODUCTS', payload: data })
     }
     fetchProducts()
