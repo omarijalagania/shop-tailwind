@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Transition, Menu } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 import { Dialog, Tab } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
 import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@heroicons/react/outline'
@@ -493,36 +494,42 @@ function Nav() {
                   {t('login')}
                 </a>
                 <span className='h-6 w-px bg-gray-200' aria-hidden='true' />
-                <a
-                  href='#'
+                <Link
+                  to='/register'
                   className='text-sm font-medium text-gray-700 hover:text-gray-800'
                 >
                   {t('register')}
-                </a>
+                </Link>
               </div>
 
-              <Popover
-                as='div'
-                onClick={openLangMenu}
-                className='hidden lg:ml-8 lg:flex'
-              >
-                {(isVisible) => (
-                  <>
-                    <Popover.Button
-                      onClick={() => setIsVisible(!isVisible)}
-                      className='text-gray-700 hover:text-gray-800 flex items-center'
-                    >
-                      <img
-                        src={`/images/${activeLang}.png`}
-                        alt=''
-                        className='w-7 h-auto block flex-shrink-0'
-                      />
-                      <span className='sr-only'>, change currency</span>
-                    </Popover.Button>
-                    {isVisible && <LangList setActiveLang={setActiveLang} />}
-                  </>
-                )}
-              </Popover>
+              {/* ################ LANGUAGE ################ */}
+
+              <Menu as='div' className='hidden lg:ml-8 lg:flex'>
+                <Menu.Button
+                  onClick={() => setIsVisible(!isVisible)}
+                  className='text-gray-700 hover:text-gray-800 flex items-center'
+                >
+                  <img
+                    src={`/images/${activeLang}.png`}
+                    alt=''
+                    className='w-7 h-auto block flex-shrink-0'
+                  />
+                  <span className='sr-only'>, change currency</span>
+                </Menu.Button>
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-100'
+                  enterFrom='transform opacity-0 scale-95'
+                  enterTo='transform opacity-100 scale-100'
+                  leave='transition ease-in duration-55'
+                  leaveFrom='transform opacity-100 scale-100'
+                  leaveTo='transform opacity-0 scale-95'
+                >
+                  <Menu.Items>
+                    <LangList setActiveLang={setActiveLang} />
+                  </Menu.Items>
+                </Transition>
+              </Menu>
 
               {/* Search */}
               <div className='flex lg:ml-6'>
