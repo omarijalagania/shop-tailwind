@@ -346,10 +346,9 @@ function Nav() {
 
             {/* Logo */}
             <div className='ml-4 flex lg:ml-0'>
-              <a href='#'>
-                <span className='sr-only'>Workflow</span>
+              <Link to='/'>
                 <img className='h-8 w-auto' src='/images/logo.png' alt='' />
-              </a>
+              </Link>
             </div>
 
             {/* Flyout menus */}
@@ -540,8 +539,8 @@ function Nav() {
               </div>
 
               {/* Cart */}
-              <div className='ml-4 flow-root lg:ml-6'>
-                <a href='#' className='group -m-2 p-2 flex items-center'>
+              <Menu as='div' className='ml-4 flow-root lg:ml-6'>
+                <Menu.Button className='group -m-2 p-2 flex items-center'>
                   <ShoppingBagIcon
                     className='flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500'
                     aria-hidden='true'
@@ -550,8 +549,40 @@ function Nav() {
                     0
                   </span>
                   <span className='sr-only'>items in cart, view bag</span>
-                </a>
-              </div>
+                </Menu.Button>
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-100'
+                  enterFrom='transform opacity-0 scale-95'
+                  enterTo='transform opacity-100 scale-100'
+                  leave='transition ease-in duration-55'
+                  leaveFrom='transform opacity-100 scale-100'
+                  leaveTo='transform opacity-0 scale-95'
+                >
+                  <Menu.Items>
+                    <div className='relative'>
+                      <div className='absolute inset-0 -left-20 top-6 max-w-full bg-white z-10'>
+                        <div className='flex flex-col bg-white w-48 rounded-md p-4'>
+                          <Menu.Item>
+                            <div className='flex items-center justify-between'>
+                              <div>1</div>
+                              <p>One Item</p>
+                              <div>remove</div>
+                            </div>
+                          </Menu.Item>
+                          <Menu.Item>
+                            <div className='flex items-center justify-between'>
+                              <div>1</div>
+                              <p>One Item</p>
+                              <div>remove</div>
+                            </div>
+                          </Menu.Item>
+                        </div>
+                      </div>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </div>
           </div>
         </div>

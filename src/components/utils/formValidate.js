@@ -12,5 +12,11 @@ export default function formValidate(values) {
   } else if (values.password.length < 6) {
     errors.password = 'Password must be at least 6 characters'
   }
+  //Phone Validation
+  if (!values.phone) {
+    errors.phone = 'Required Phone'
+  } else if (!/^\d{9}$/.test(values.phone)) {
+    errors.phone = 'Invalid Phone Number'
+  }
   return errors
 }
