@@ -427,7 +427,7 @@ function Nav() {
                 >
                   <Menu.Items>
                     <div className='relative'>
-                      <div className='absolute inset-0 -left-20 top-6 max-w-full bg-white z-10'>
+                      <div className='absolute inset-0 -left-[9rem] top-6 max-w-full bg-white z-10'>
                         <div className='flex flex-col bg-white w-48 rounded-md p-4'>
                           <Menu.Item>
                             <div className='flex items-center justify-between'>
