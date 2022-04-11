@@ -7,14 +7,22 @@ import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@heroicons/react/outline'
 import LangList from '../../LangList/LangList'
 import { navigation } from '../../utils/navigation'
 import useTranslation from '../ ../../../hooks/useTranslation'
+import Modal from '../../Modal/Modal'
 
 function Nav() {
   const [open, setOpen] = useState(false)
   const { t, localeLang } = useTranslation()
   const [activeLang, setActiveLang] = useState(localeLang)
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
+  }
+  const openModal = () => {
+    setIsOpenModal(true)
+  }
+  const closeModal = () => {
+    setIsOpenModal(false)
   }
 
   return (
@@ -363,6 +371,16 @@ function Nav() {
                   />
                   <span className='sr-only'>, change currency</span>
                 </Menu.Button>
+                <button type='button' onClick={openModal} className='ml-3'>
+                  Open
+                </button>
+                <Modal
+                  title='Test Modal'
+                  closeModal={closeModal}
+                  isOpen={isOpenModal}
+                >
+                  <p>Content Goes Here!</p>
+                </Modal>
                 <Transition
                   as={Fragment}
                   enter='transition ease-out duration-100'
