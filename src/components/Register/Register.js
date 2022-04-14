@@ -3,6 +3,7 @@ import { ProductContext } from '../../context/productContext'
 import useFormValidation from '../hooks/useFormValidation'
 import useTranslation from '../hooks/useTranslation'
 import formValidate from '../utils/formValidate'
+import { useDebounce } from '../hooks/useDebounce'
 export default function Register() {
   const [state, dispatch] = useContext(ProductContext)
 
@@ -22,6 +23,10 @@ export default function Register() {
   } = useFormValidation(initialState, formValidate)
 
   const { t } = useTranslation()
+
+  const debouncedValue = useDebounce(values.email, 500)
+
+  console.log('debouncedValue', debouncedValue)
 
   return (
     <div className='min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
@@ -60,10 +65,11 @@ export default function Register() {
                   id='email'
                   name='email'
                   type='email'
-                  value={values.email}
+                  value={state.email}
                   autoComplete='email'
                   onChange={(e) => {
                     handleChange(e)
+
                     dispatch({ type: 'SET_EMAIL', payload: e.target.value })
                   }}
                   onBlur={handleBlur}

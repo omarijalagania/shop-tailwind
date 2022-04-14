@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
+import ReactDOM from 'react-dom'
 import { Popover, Transition, Menu } from '@headlessui/react'
 import { Link, NavLink } from 'react-router-dom'
-import { Dialog, Tab } from '@headlessui/react'
+import { Dialog } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
 import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@heroicons/react/outline'
 import LangList from '../../LangList/LangList'
@@ -300,13 +301,17 @@ function Nav() {
                 <button type='button' onClick={openModal} className='ml-3'>
                   Open
                 </button>
-                <Modal
-                  title='Test Modal'
-                  closeModal={closeModal}
-                  isOpen={isOpenModal}
-                >
-                  <p>Content Goes Here!</p>
-                </Modal>
+                {ReactDOM.createPortal(
+                  <Modal
+                    title='Test Modal'
+                    closeModal={closeModal}
+                    isOpen={isOpenModal}
+                  >
+                    <p>Content Goes Here!</p>
+                  </Modal>,
+                  document.getElementById('modal'),
+                )}
+
                 <Transition
                   as={Fragment}
                   enter='transition ease-out duration-100'
