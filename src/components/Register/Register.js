@@ -40,9 +40,9 @@ export default function Register() {
           {t('register')}
         </h2>
         <p className='mt-2 text-center text-sm text-gray-600'>
-          Or{' '}
+          Or
           <a
-            href='#'
+            href='/test'
             className='font-medium text-indigo-600 hover:text-indigo-500'
           >
             Log In
