@@ -8,6 +8,7 @@ import Hello from "./components/Name/Name"
 import Docs from "./components/Docs/Docs"
 import ShowDocs from "./components/Docs/ShowDocs"
 import Myform from "./components/MyForm/Myform"
+import Room from "./components/Room/Room"
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
             />
           </Routes> */}
         <Routes>
-          <Route path="/" element={<Myform />} />
+          {/* <Route path="/" element={<Myform />} /> */}
+          <Route path="/" element={<Room />} />
           <Route path="/docs" element={<Docs />} />
           <Route path="/show-docs" element={<ShowDocs />} />
           <Route path="/:name" element={<Hello />} />
